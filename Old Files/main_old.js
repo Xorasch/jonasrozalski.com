@@ -141,18 +141,6 @@
         
             // Get current scroll position
             let scrollY = window.pageYOffset;
-
-            // If at the bottom of the page, activate the last nav item
-            const atBottom = (window.innerHeight + scrollY) >= document.documentElement.scrollHeight - 10;
-            if (atBottom) {
-                sections.forEach(function(current) {
-                    const sectionId = current.getAttribute("id");
-                    document.querySelector(".s-header__nav a[href*=" + sectionId + "]").parentNode.classList.remove("current");
-                });
-                const lastId = sections[sections.length - 1].getAttribute("id");
-                document.querySelector(".s-header__nav a[href*=" + lastId + "]").parentNode.classList.add("current");
-                return;
-            }
         
             // Loop through sections to get height(including padding and border), 
             // top and ID values for each
@@ -161,6 +149,12 @@
                 const sectionTop = current.offsetTop - 50;
                 const sectionId = current.getAttribute("id");
             
+               /* If our current scroll position enters the space where current section 
+                * on screen is, add .current class to parent element(li) of the thecorresponding 
+                * navigation link, else remove it. To know which link is active, we use 
+                * sectionId variable we are getting while looping through sections as 
+                * an selector
+                */
                 if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                     document.querySelector(".s-header__nav a[href*=" + sectionId + "]").parentNode.classList.add("current");
                 } else {
@@ -205,38 +199,31 @@
     const ssLightbox = function() {
 
         const folioLinks = document.querySelectorAll('.folio-item a');
-        const videos = [
-            document.querySelector('.CombatVideo'),
-            document.querySelector('.RoboGirlVideo'),
-            document.querySelector('.GammaVideo'),
-            document.querySelector('.RunFVideo'),
-            document.querySelector('.AkaliVideo'),
-        ];
+        const video1 = document.querySelector('.CombatVideo');
+        const video2 = document.querySelector('.RoboGirlVideo');
+        const video3 = document.querySelector('.GammaVideo');
+        const video4 = document.querySelector('.RunFVideo');
+        const video5 = document.querySelector('.AkaliVideo');
         const modals = [];
 
-        folioLinks.forEach(function(link, index) {
+        folioLinks.forEach(function(link) {
             let modalbox = link.getAttribute('href');
             let instance = basicLightbox.create(
                 document.querySelector(modalbox),
                 {
                     onShow: function(instance) {
-                        // Nur das zum Modal gehörende Video abspielen
-                        if (videos[index]) videos[index].play();
-
+                        video1.play();
+                        video2.play();
+                        video3.play();
+                        video4.play();
+                        video5.play();
                         //detect Escape key press
-                        document.addEventListener("keydown", function onKeyDown(evt) {
-                            if (evt.key === 'Escape') {
+                        document.addEventListener("keydown", function(evt) {
+                            evt = evt || window.event;
+                            if(evt.keyCode === 27){
                                 instance.close();
-                                document.removeEventListener("keydown", onKeyDown);
                             }
                         });
-                    },
-                    onClose: function() {
-                        // Video beim Schließen pausieren und zurücksetzen
-                        if (videos[index]) {
-                            videos[index].pause();
-                            videos[index].currentTime = 0;
-                        }
                     }
                 }
             )

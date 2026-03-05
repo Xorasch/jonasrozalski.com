@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
 
@@ -7,24 +9,24 @@
    ================================================== -->
    <meta charset="utf-8">
 	<title>Jonas Rozalski</title>
-	<meta name="description" content="Jonas Rozalski – 3D Animator from Germany. Passionate about game animation and character movement.">
-	<meta name="author" content="Jonas Rozalski">
-
-	<!-- Open Graph -->
-	<meta property="og:title" content="Jonas Rozalski – 3D Animator">
-	<meta property="og:description" content="Portfolio of Jonas Rozalski, a 3D Animator specializing in gameplay animation.">
-	<meta property="og:type" content="website">
+	<meta name="description" content="">  
+	<meta name="author" content="">
 
    <!-- mobile specific metas
    ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/overrides.css">
+    
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
+
+    <!-- script
+    ================================================== -->
+    <script defer src="js/vendor/fontawesome/all.min.js"></script>
     
 </head>
 
@@ -56,7 +58,7 @@
     <section id="hero" class="target-section" style="background-color: #141414; width: 100%; height: 100vh; overflow: hidden; position: relative;">
 
             <video autoplay muted loop id="heroVid" class="hero_video">
-                <source src="videos/Demojonasrozalskicut.webm" type="video/webm">
+                <source src="videos/Demojonasrozalskicut.webm" type="video/mp4">
             </video>
 
             <div class="row s-hero__content">
@@ -72,9 +74,14 @@
 
                         <div class="row s-about__content-bottom">
                             <div class="column w-1000-stack">
-                                <a class="btn btn--download vimeo_btn">
-                                    <i class="fa-regular fa-circle-play"></i>
-                                        Showreel
+                                <a  class="btn btn--download vimeo_btn">
+                                        
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 10 50 50" style="fill:rgba(0, 0, 0, 1); transition: all 5s ease;"><path d="M45.563,29.174l-22-15c-0.307-0.208-0.703-0.231-1.031-0.058C22.205,14.289,22,14.629,22,15v30
+                                        c0,0.371,0.205,0.711,0.533,0.884C22.679,45.962,22.84,46,23,46c0.197,0,0.394-0.059,0.563-0.174l22-15
+                                        C45.836,30.64,46,30.331,46,30S45.836,29.36,45.563,29.174z M24,43.107V16.893L43.225,30L24,43.107z" stroke="black" stroke-width="2"></path><path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
+                                        S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z" stroke="black" stroke-width="2"></path></svg>
+
+                                        Watch Demo Reel
                                 </a>
                             </div>
                         </div>
@@ -124,37 +131,28 @@
 
             <div class="column folio-item">
                 <a href="#modal-01" class="folio-item__thumb">
+                    <!-- <img src="images/portfolio/Gamma_Walk.gif"> -->
                     <video autoplay loop muted playsinline>
                         <source src="images/portfolio/CombatSequence.webm" type="video/webm" />
                     </video>
-                    <div class="folio-item__overlay">
-                        <span class="folio-item__title">Saga Attack</span>
-                        <span class="folio-item__icon"><i class="fa-solid fa-play"></i></span>
-                    </div>
                 </a>
             </div> <!-- end folio-item -->
  
             <div class="column folio-item">
                 <a href="#modal-02" class="folio-item__thumb">
+                    <!-- <img src="images/portfolio/Gamma_Walk.gif"> -->
                     <video autoplay loop muted playsinline>
                         <source src="images/portfolio/RobogirlEmote.webm" type="video/webm" />
                     </video>
-                    <div class="folio-item__overlay">
-                        <span class="folio-item__title">Robogirl Emote</span>
-                        <span class="folio-item__icon"><i class="fa-solid fa-play"></i></span>
-                    </div>
                 </a>
             </div> <!-- end folio-item -->
 
             <div class="column folio-item">
                 <a href="#modal-03" class="folio-item__thumb">
+                    <!-- <img src="images/portfolio/Gamma_Walk.gif"> -->
                     <video autoplay loop muted playsinline>
                         <source src="images/portfolio/GammaWalk.webm" type="video/webm" />
                     </video>
-                    <div class="folio-item__overlay">
-                        <span class="folio-item__title">Gamma Walkcycle</span>
-                        <span class="folio-item__icon"><i class="fa-solid fa-play"></i></span>
-                    </div>
                 </a>
             </div> <!-- end folio-item -->
 
@@ -163,10 +161,6 @@
                     <video autoplay loop muted playsinline>
                         <source src="images/portfolio/Moveset Runf.webm" type="video/webm" />
                     </video>
-                    <div class="folio-item__overlay">
-                        <span class="folio-item__title">Applibot Runcycle</span>
-                        <span class="folio-item__icon"><i class="fa-solid fa-play"></i></span>
-                    </div>
                 </a>
             </div> <!-- end folio-item -->
 
@@ -175,10 +169,6 @@
                     <video autoplay loop muted playsinline>
                         <source src="images/portfolio/Akalidanceemote.webm" type="video/webm" />
                     </video>
-                    <div class="folio-item__overlay">
-                        <span class="folio-item__title">Akali Dance Emote</span>
-                        <span class="folio-item__icon"><i class="fa-solid fa-play"></i></span>
-                    </div>
                 </a>
             </div> <!-- end folio-item -->
 
@@ -189,13 +179,13 @@
                 <video autoplay loop muted playsinline class="CombatVideo">
                     <source src="images/portfolio/gallery/CombatSequence.webm" type="video/webm" />
                 </video>
+    
                 <div class="modal-popup__desc">
-                    <div class="modal-popup__header">
-                        <h5>Saga Attack</h5>
-                        <a href="https://www.kyosil.com/" target="_blank" class="modal-popup__details">Rig by Kyosil</a>
-                    </div>
+                    <h5>Saga Attack</h5>
                     <p>I animated this during my third term at Kyosil.<br>It started out with 2 Characters fighting each other but I realized it wasnt a realistic goal for the time I had. I decided to turn it into a 3-Hit-Combo and I think it turned out well in the end.</p>
                 </div>
+    
+                <a href="https://www.kyosil.com/" target="_blank" class="modal-popup__details">Rig by Kyosil</a>
             </div>
         </div> <!-- end modal -->
         
@@ -204,13 +194,13 @@
                 <video autoplay loop muted playsinline class="RoboGirlVideo">
                     <source src="images/portfolio/gallery/RoboGirlEmote.webm" type="video/webm" />
                 </video>
+    
                 <div class="modal-popup__desc">
-                    <div class="modal-popup__header">
-                        <h5>Robogirl Emote</h5>
-                        <a href="https://builtbycolossus.com/" target="_blank" class="modal-popup__details">Rig by Colossus</a>
-                    </div>
+                    <h5>Robogirl Emote</h5>
                     <p>I animated this during my second term at Kyosil.<br>I wanted to animate something where I had to show the personality of a character, since I didn't have an animation of that kind. After figuring out the arcs of the head and hands it went pretty well!</p>
                 </div>
+    
+                <a href="https://builtbycolossus.com/" target="_blank" class="modal-popup__details">Rig by colossus</a>
             </div>
         </div> <!-- end modal -->
         
@@ -219,13 +209,13 @@
                 <video autoplay loop muted playsinline class="GammaVideo">
                     <source src="images/portfolio/gallery/Gamme Walk Video.webm" type="video/webm" />
                 </video>
+    
                 <div class="modal-popup__desc">
-                    <div class="modal-popup__header">
-                        <h5>Gamma Walkcycle</h5>
-                        <a href="https://agora.community/content/gamma-maya" target="_blank" class="modal-popup__details">Rig by Agora</a>
-                    </div>
-                    <p>I did this walkcycle after my first term at Kyosil.<br>I wanted to try something new since I have never done a cycle for a quadruped before. It was a bit confusing at first but after figuring out the rythm of the feet it actually went quite well.<br>I definitely want to do more creature animations in the future!</p>
+                    <h5>Gamma Walkcycle</h5>
+                    <p>I did this walkcycle after my first term at Kyosil. <br> I wanted to try something new since I have never done a cycle for a quadruped before. It was a bit confusing at first but after figuring out the rythm of the feet it actually went quite well. <br>I definitely want to do more creature animations in the future!</p>
                 </div>
+    
+                <a href="https://agora.community/content/gamma-maya" target="_blank" class="modal-popup__details">Rig by Agora</a>
             </div>
         </div> <!-- end modal -->
 
@@ -234,13 +224,13 @@
                 <video autoplay loop muted playsinline class="RunFVideo">
                     <source src="images/portfolio/gallery/Moveset Runf.webm" type="video/webm" />
                 </video>
+    
                 <div class="modal-popup__desc">
-                    <div class="modal-popup__header">
-                        <h5>Applibot Runcycle</h5>
-                        <a href="https://www.applibot.co.jp/en/3drig/" target="_blank" class="modal-popup__details">Rig by Applibot</a>
-                    </div>
-                    <p>I did this runcycle during my first term at Kyosil with Markus Hammarstedt.<br>It was an awesome learning experience and Markus taught me alot about his workflow and approach to these kind of animations.</p>
+                    <h5>Applibot Runcycle</h5>
+                    <p>I did this runcycle during my first term at Kyosil with Markus Hammarstedt.<br> It was an awesome learning experience and Markus taught me alot about his workflow and approach to these kind of animations. </p>
                 </div>
+    
+                <a href="https://www.applibot.co.jp/en/3drig/" target="_blank" class="modal-popup__details">Rig by applibot</a>
             </div>
         </div> <!-- end modal -->
 
@@ -249,13 +239,13 @@
                 <video autoplay loop muted playsinline class="AkaliVideo">
                     <source src="images/portfolio/gallery/Akalidanceemotevideo.webm" type="video/webm" />
                 </video>
+    
                 <div class="modal-popup__desc">
-                    <div class="modal-popup__header">
-                        <h5>Akali Dance Emote</h5>
-                        <a href="https://agora.community/content/akali-maya" target="_blank" class="modal-popup__details">Rig by Riot Games</a>
-                    </div>
-                    <p>I started this animation inbetween courses and it was just planned as a test to see how I would do animating a dance.<br>While working on it I had so much fun that I spend more time on it than planned because I wanted to finish it. I think it currently is my favorite animation I have done and the most fun I had while animating!</p>
+                    <h5>Akali Dance Emote</h5>
+                    <p>I started this animation inbetween courses and it was just planned as a test to see how I would do animating a dance. <br>While working on it I had so much fun that I spend more time on it than planned because I wanted to finsih it. I think it currently is my favorite animation I have done and the most fun I had while animating!</p>
                 </div>
+    
+                <a href="hhttps://agora.community/content/akali-maya" target="_blank" class="modal-popup__details">Rig by Riot Games</a>
             </div>
         </div> <!-- end modal -->
 
@@ -370,9 +360,8 @@
                 <div style="text-align: center;">
                     <ul class="s-footer__social" >
                         <li><a href="https://twitter.com/jonasrozalski" target="_blank"><i class="fa-brands fa-square-twitter fa-xl"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/jonas-rozalski-862460218/" target="_blank"><i class="fa-brands fa-linkedin-in fa-xl"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/jonas-rozalski-862460218/" target="_blank"><i class="fa-brands fa-linkedin-in fa-xl"></i></i></a></li>
                         <li><a href="https://instagram.com/jonasrozalski" target="_blank"><i class="fa-brands fa-square-instagram fa-xl"></i></a></li>
-                        <li><a href="https://bsky.app/profile/jonasrozalski.com" target="_blank"><i class="fa-brands fa-bluesky fa-xl"></i></a></li>
                     </ul>
                 </div>
             </div> 

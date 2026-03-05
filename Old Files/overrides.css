@@ -1,0 +1,520 @@
+/* ===================================================================
+ * VISUAL OVERRIDES — Dark & Minimal, Purple Accent #8E44AD
+ * Drops in after stylesheet.css to unify the full site
+ * =================================================================== */
+
+/* -------------------------------------------------------------------
+ * ACCENT COLOR VARIABLE — single source of truth
+ * ------------------------------------------------------------------- */
+:root {
+    --accent: #8E44AD;
+    --accent-light: #BF55EC;
+    --accent-glow: rgba(142, 68, 173, 0.15);
+}
+
+/* -------------------------------------------------------------------
+ * SECTION HEADINGS — consistent across all sections
+ * small, uppercase, purple underline
+ * ------------------------------------------------------------------- */
+.s-portfolio h3,
+.s-about h3,
+#resume .resume-header h2,
+#contact .section-intro h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: .38em;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.4rem;
+    margin-bottom: 0;
+}
+
+.s-portfolio h3::after,
+.s-about h3::after,
+#resume .resume-header h2::after,
+#contact .section-intro h2::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 36px;
+    background: var(--accent);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.s-portfolio__header,
+.s-about .row,
+#resume .resume-header,
+#contact .section-intro .col-twelve {
+    text-align: center;
+}
+
+/* -------------------------------------------------------------------
+ * NAVIGATION — active + hover in purple
+ * ------------------------------------------------------------------- */
+.s-header__nav a:hover,
+.s-header__nav a:focus,
+.s-header__nav .current a {
+    color: var(--accent-light);
+}
+
+/* subtle purple underline on active nav item */
+.s-header__nav .current a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--accent);
+    position: absolute;
+    bottom: calc(var(--header-height) * 0.18);
+    left: 0;
+}
+
+.s-header__nav li {
+    position: relative;
+}
+
+/* -------------------------------------------------------------------
+ * ABOUT SECTION — dark background, consistent text
+ * ------------------------------------------------------------------- */
+.s-about {
+    background-color: var(--color-gray-18) !important;
+    padding-top: calc(6 * var(--space));
+    padding-bottom: var(--vspace-4);
+}
+
+.s-about .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.s-about h3 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+.s-about p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.6rem;
+    line-height: 1.9;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.s-about__pic {
+    border: none;
+    border-radius: 50%;
+    width: 16rem;
+    height: 16rem;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(20%);
+    margin-bottom: 3.2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.s-about .column.large-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.s-about .column.large-9 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* Demo reel button */
+.s-about__content-bottom .btn--download {
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    letter-spacing: .2em;
+    transition: all 0.3s ease;
+}
+
+.s-about__content-bottom .btn--download svg path {
+    fill: white;
+    stroke: white;
+}
+
+.s-about__content-bottom .btn--download:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.s-about__content-bottom .btn--download:hover svg path {
+    fill: white;
+    stroke: white;
+}
+
+/* -------------------------------------------------------------------
+ * PORTFOLIO SECTION
+ * ------------------------------------------------------------------- */
+.s-portfolio {
+    background-color: var(--color-gray-18);
+}
+
+.s-portfolio h3 {
+    color: white;
+    margin-bottom: 3rem;
+}
+
+/* Portfolio card hover — purple tint overlay + scale */
+.folio-item__thumb::before {
+    background-color: rgba(50, 0, 70, 0.75);
+}
+
+.folio-item__thumb::after {
+    content: "▶";
+    font-family: var(--font-1);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: white;
+    height: 48px;
+    width: 48px;
+    line-height: 48px;
+    margin-left: -24px;
+    margin-top: -24px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    text-indent: 3px;
+}
+
+.folio-item:hover .folio-item__thumb::after {
+    transform: scale(1);
+    border-color: var(--accent-light);
+    color: var(--accent-light);
+}
+
+.folio-item video {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(0.9);
+}
+
+.folio-item:hover video {
+    transform: scale(1.04);
+    filter: brightness(1);
+}
+
+/* Modal popup — dark */
+.modal-popup {
+    background-color: var(--color-gray-17);
+    border-top: 3px solid var(--accent);
+}
+
+.modal-popup h5 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: .8rem;
+    padding: 0 4rem;
+    padding-top: 2.4rem;
+}
+
+.modal-popup__desc p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.modal-popup__details {
+    background-color: transparent;
+    border: 1px solid rgba(142, 68, 173, 0.5);
+    color: var(--accent-light);
+    font-weight: 500;
+    letter-spacing: .05em;
+    transition: all 0.25s ease;
+}
+
+.modal-popup__details:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+/* -------------------------------------------------------------------
+ * RESUME / TIMELINE — modern minimal dark
+ * ------------------------------------------------------------------- */
+#resume {
+    background-color: var(--color-gray-18);
+    padding-top: 8rem;
+    padding-bottom: 12rem;
+}
+
+#resume .resume-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+#resume .resume-header h2 {
+    color: white;
+    margin-bottom: 0;
+}
+
+#resume .resume-timeline {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+#resume .timeline-wrap {
+    position: relative;
+    margin: 0;
+    padding-left: 3.2rem;
+}
+
+#resume .timeline-wrap::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    background: rgba(255,255,255,0.07);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#resume .timeline-block {
+    position: relative;
+    padding: 0 0 5rem 4rem;
+    float: none;
+    clear: both;
+}
+
+#resume .timeline-block:last-child {
+    padding-bottom: 0;
+}
+
+#resume .timeline-block::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: rgba(255,255,255,0.04);
+    margin-top: 5rem;
+}
+
+#resume .timeline-block:last-child::after {
+    display: none;
+}
+
+/* dot instead of icon */
+#resume .timeline-ico {
+    width: 1rem;
+    height: 1rem;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--accent-glow);
+    position: absolute;
+    left: -3.7rem;
+    top: .7rem;
+    margin-left: 0;
+    line-height: 1;
+}
+
+#resume .timeline-ico i {
+    display: none;
+}
+
+/* date label */
+#resume .timeline-header {
+    float: none;
+    width: auto;
+    padding-right: 0;
+    text-align: left;
+    margin-bottom: .4rem;
+}
+
+#resume .timeline-header p {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: .2rem;
+}
+
+#resume .timeline-header h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* content */
+#resume .timeline-content {
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 0;
+}
+
+#resume .timeline-content h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.32);
+    margin-bottom: .5rem;
+    margin-top: .2rem;
+    padding-bottom: 0;
+}
+
+#resume .timeline-content h4::after {
+    display: none;
+}
+
+#resume .timeline-content p {
+    font-size: 1.5rem;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.55);
+    margin: 0;
+    padding: 0;
+}
+
+/* responsive overrides */
+@media only screen and (max-width: 768px) {
+    #resume .timeline-wrap {
+        padding-left: 2.4rem;
+    }
+    #resume .timeline-block {
+        padding-left: 3rem;
+    }
+    #resume .timeline-ico {
+        left: -2.9rem;
+    }
+    #resume .timeline-header h3 {
+        font-size: 1.8rem;
+    }
+    #resume .timeline-wrap::before {
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #resume .resume-header h2 {
+        font-size: 1rem;
+    }
+    #resume .timeline-header h3 {
+        font-size: 1.6rem;
+    }
+    #resume .timeline-ico {
+        left: -2.4rem;
+    }
+}
+
+/* -------------------------------------------------------------------
+ * CONTACT SECTION
+ * ------------------------------------------------------------------- */
+#contact {
+    background-color: var(--color-gray-18);
+    padding-top: 10rem;
+    padding-bottom: 14rem;
+}
+
+#contact .section-intro h2 {
+    color: white;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+}
+
+#contact .section-intro p {
+    color: rgba(255,255,255,0.55);
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+}
+
+/* Social icons */
+.s-footer__social a {
+    color: rgba(255,255,255,0.5);
+    transition: color 0.25s ease, transform 0.25s ease;
+    display: inline-block;
+}
+
+.s-footer__social a:hover {
+    color: var(--accent-light);
+    transform: translateY(-3px);
+}
+
+.s-footer__social li {
+    margin-right: 2.4rem;
+}
+
+/* -------------------------------------------------------------------
+ * FOOTER
+ * ------------------------------------------------------------------- */
+.s-footer {
+    background-color: var(--color-gray-18);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.s-footer .row {
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.ss-copyright span {
+    color: rgba(255,255,255,0.2);
+    font-size: 1.2rem;
+}
+
+.s-footer a {
+    color: rgba(255,255,255,0.35);
+}
+
+.s-footer a:hover {
+    color: var(--accent-light);
+}
+
+/* -------------------------------------------------------------------
+ * SECTION SEPARATOR — subtle gradient dividers between sections
+ * ------------------------------------------------------------------- */
+.s-about,
+.s-portfolio,
+#resume,
+#contact {
+    border-top: none;
+    position: relative;
+}
+
+.s-portfolio::before,
+#resume::before,
+#contact::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 70%;
+    background: rgba(255,255,255,0.12);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.s-footer .row {
+    border-top: none;
+}
+
+
+/* Remove dark strips at very top and bottom */
+body {
+    background-color: var(--color-gray-18);
+}
+
+/* Fix hero video not covering full height */
+.hero_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
