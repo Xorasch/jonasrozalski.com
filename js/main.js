@@ -280,16 +280,53 @@
    /* Smoothscroll
     * ------------------------------------------------------ */
     const ssSmoothScroll = function () {
-        
+
         const triggers = document.querySelectorAll(".smoothscroll");
+        let scrollRaf = null;
+
+        function smoothScrollTo(targetY, duration) {
+            // Laufende Animation sofort canceln
+            if (scrollRaf) {
+                cancelAnimationFrame(scrollRaf);
+                scrollRaf = null;
+            }
+
+            const startY = window.scrollY;
+            const diff = targetY - startY;
+            let startTime = null;
+
+            function easeInOut(t) {
+                return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+            }
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                window.scrollTo(0, startY + diff * easeInOut(progress));
+                if (progress < 1) {
+                    scrollRaf = requestAnimationFrame(step);
+                } else {
+                    scrollRaf = null;
+                }
+            }
+
+            scrollRaf = requestAnimationFrame(step);
+        }
 
         triggers.forEach(function(trigger) {
-            trigger.addEventListener("click", function() {
-                const target = trigger.getAttribute("href");
+            trigger.addEventListener("click", function(e) {
+                e.preventDefault();
+                const targetId = trigger.getAttribute("href");
 
-                Jump(target, {
-                    duration: 1200,
-                });
+                if (targetId === "#hero") {
+                    smoothScrollTo(0, 1200);
+                    return;
+                }
+
+                const targetEl = document.querySelector(targetId);
+                if (!targetEl) return;
+                smoothScrollTo(targetEl.offsetTop, 1200);
             });
         });
 
